@@ -404,7 +404,7 @@ public class CameraConnectionFragment extends Fragment {
       throw new RuntimeException(getString(R.string.camera_error));
     }
 
-    cameraConnectionCallback.onPreviewSizeChosen(previewSize, sensorOrientation);
+    cameraConnectionCallback.onPreviewSizeChosen(previewSize, 0);
   }
 
   /**
@@ -580,7 +580,7 @@ public class CameraConnectionFragment extends Fragment {
     final RectF bufferRect = new RectF(0, 0, previewSize.getHeight(), previewSize.getWidth());
     final float centerX = viewRect.centerX();
     final float centerY = viewRect.centerY();
-    if (Surface.ROTATION_90 == rotation || Surface.ROTATION_270 == rotation) {
+/*    if (Surface.ROTATION_90 == rotation || Surface.ROTATION_270 == rotation) {
       bufferRect.offset(centerX - bufferRect.centerX(), centerY - bufferRect.centerY());
       matrix.setRectToRect(viewRect, bufferRect, Matrix.ScaleToFit.FILL);
       final float scale =
@@ -592,6 +592,7 @@ public class CameraConnectionFragment extends Fragment {
     } else if (Surface.ROTATION_180 == rotation) {
       matrix.postRotate(180, centerX, centerY);
     }
+    */
     textureView.setTransform(matrix);
   }
 

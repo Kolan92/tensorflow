@@ -78,7 +78,8 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
   private static final boolean MAINTAIN_ASPECT = true;
 
-  private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);
+//  private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);
+  private static final Size DESIRED_PREVIEW_SIZE = new Size(480, 640);
 
 
   private Integer sensorOrientation;
@@ -128,7 +129,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
     LOGGER.i("Sensor orientation: %d, Screen orientation: %d", rotation, screenOrientation);
 
-    sensorOrientation = rotation + screenOrientation;
+    //sensorOrientation = rotation + screenOrientation;
 
     LOGGER.i("Initializing at size %dx%d", previewWidth, previewHeight);
     rgbFrameBitmap = Bitmap.createBitmap(previewWidth, previewHeight, Config.ARGB_8888);
@@ -140,7 +141,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
         sensorOrientation, MAINTAIN_ASPECT);
 
     cropToFrameTransform = new Matrix();
-    frameToCropTransform.invert(cropToFrameTransform);
+    //frameToCropTransform.invert(cropToFrameTransform);
 
     addCallback(
         new DrawCallback() {
@@ -193,10 +194,10 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     if (copy != null) {
       final Matrix matrix = new Matrix();
       final float scaleFactor = 2;
-      matrix.postScale(scaleFactor, scaleFactor);
-      matrix.postTranslate(
-          canvas.getWidth() - copy.getWidth() * scaleFactor,
-          canvas.getHeight() - copy.getHeight() * scaleFactor);
+     // matrix.postScale(scaleFactor, scaleFactor);
+      //matrix.postTranslate(
+       //   canvas.getWidth() - copy.getWidth() * scaleFactor,
+       //   canvas.getHeight() - copy.getHeight() * scaleFactor);
       canvas.drawBitmap(copy, matrix, new Paint());
 
       final Vector<String> lines = new Vector<String>();

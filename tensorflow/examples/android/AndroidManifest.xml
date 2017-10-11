@@ -31,11 +31,11 @@
     <application android:allowBackup="true"
         android:debuggable="true"
         android:label="@string/app_name"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/ic_layers_black_24dp"
         android:theme="@style/MaterialTheme">
 
         <activity android:name="org.tensorflow.demo.ClassifierActivity"
-                  android:screenOrientation="portrait"
+                  android:screenOrientation="landscape"
                   android:label="@string/activity_name_classification">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +44,7 @@
         </activity>
 
         <activity android:name="org.tensorflow.demo.DetectorActivity"
-                  android:screenOrientation="portrait"
+                  android:screenOrientation="landscape"
                   android:label="@string/activity_name_detection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,7 +53,7 @@
         </activity>
 
         <activity android:name="org.tensorflow.demo.StylizeActivity"
-                  android:screenOrientation="portrait"
+                  android:screenOrientation="landscape"
                   android:label="@string/activity_name_stylize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,7 +62,7 @@
         </activity>
 
         <activity android:name="org.tensorflow.demo.SpeechActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="landscape"
             android:label="@string/activity_name_speech">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
